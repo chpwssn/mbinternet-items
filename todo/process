@@ -8,4 +8,4 @@ HEAD=`head -n1 .pending`
 TAIL=`tail -n1 .pending`
 SLUG=`echo $HEAD-$TAIL | sed -e 's/[\/:]/_/g'`
 
-mv .pending internetcentrum-$SLUG
+mv .pending mbinternet-$SLUG
