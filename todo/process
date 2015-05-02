@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+cat $1  > .pending
+
+HEAD=`head -n1 .pending`
+TAIL=`tail -n1 .pending`
+SLUG=`echo $HEAD-$TAIL | sed -e 's/[\/:]/_/g'`
+
+mv .pending internetcentrum-$SLUG
